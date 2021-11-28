@@ -2,7 +2,7 @@ name: CI Additional
 on:
   push:
     branches:
-      - "main"
+      - "master"
   pull_request:
     branches:
       - "*"
@@ -15,7 +15,7 @@ jobs:
     name: detect ci trigger
     runs-on: ubuntu-latest
     if: |
-      github.repository == 'dcherian/flox'
+      github.repository == 'ml31415/numpy-groupies'
       && (github.event_name == 'push' || github.event_name == 'pull_request')
     outputs:
       triggered: ${{ steps.detect-trigger.outputs.trigger-found }}
@@ -42,8 +42,6 @@ jobs:
         os: ["ubuntu-latest"]
         env:
           [
-            "no-xarray",
-            "no-dask",
             "minimal-requirements",
           ]
     steps:
@@ -68,7 +66,7 @@ jobs:
           channels: conda-forge
           channel-priority: strict
           mamba-version: "*"
-          activate-environment: flox-tests
+          activate-environment: numpy_groupies-tests
           auto-update-conda: false
           python-version: 3.8
           use-only-tar-bz2: true
@@ -77,7 +75,7 @@ jobs:
         run: |
           mamba env update -f $CONDA_ENV_FILE
 
-      - name: Install flox
+      - name: Install numpy_groupies
         run: |
           python -m pip install --no-deps -e .
 
@@ -85,13 +83,13 @@ jobs:
         run: |
           conda info -a
           conda list
-      - name: Import flox
+      - name: Import numpy-groupies
         run: |
-          python -c "import flox"
+          python -c "import numpy_groupies"
       - name: Run tests
         run: |
           python -m pytest \
-             --cov=flox \
+             --cov=numpy_groupies \
              --cov-report=xml
 
       - name: Upload code coverage to Codecov
