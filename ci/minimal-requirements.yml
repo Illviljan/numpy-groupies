@@ -1,4 +1,4 @@
-name: flox-tests
+name: numpy_groupies-tests
 channels:
   - conda-forge
 dependencies:

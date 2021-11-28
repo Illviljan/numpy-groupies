@@ -1,13 +1,9 @@
-name: flox-doc
+name: numpy_groupies-doc
 channels:
   - conda-forge
 dependencies:
-  - dask-core
   - pip
-  - xarray
   - numpydoc
-  - numpy_groupies
-  - toolz
   - myst-parser
   - sphinx
   - sphinx-book-theme

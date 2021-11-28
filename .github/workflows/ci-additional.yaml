@@ -88,10 +88,9 @@ jobs:
           python -c "import numpy_groupies"
       - name: Run tests
         run: |
-          python -m pytest \
+          python -m pytest -n 4 \
              --cov=numpy_groupies \
              --cov-report=xml
-
       - name: Upload code coverage to Codecov
         uses: codecov/codecov-action@v2.1.0
         with:
