@@ -1,0 +1,10 @@
+name: numpy-groupies-tests
+channels:
+  - conda-forge
+dependencies:
+  - codecov
+  - pip
+  - pytest
+  - pytest-cov
+  - pre-commit
+  - numba
