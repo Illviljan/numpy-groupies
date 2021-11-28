@@ -42,7 +42,7 @@ jobs:
           channels: conda-forge
           channel-priority: strict
           mamba-version: "*"
-          activate-environment: flox-tests
+          activate-environment: numpy_groupies-tests
           auto-update-conda: false
           python-version: ${{ matrix.python-version }}
           use-only-tar-bz2: true
@@ -57,10 +57,10 @@ jobs:
           python -m pip install -e .
           conda list
 
-      - name: Run Tests
-        shell: bash -l {0}
-        run: |
-          pytest --cov=./ --cov-report=xml
+      - name: Run tests
+        run: python -m pytest -n 4
+          --cov=numpy-groupies
+          --cov-report=xml
 
       - name: Upload code coverage to Codecov
         uses: codecov/codecov-action@v1
