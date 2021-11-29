@@ -1,0 +1,16 @@
+name: xarray-tests
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - numba
+  - numpy
+  - pandas
+  - pip
+  - pre-commit
+  - pytest
+  - pytest-cov
+  - pytest-env
+  - pytest-xdist
+  - scipy
+

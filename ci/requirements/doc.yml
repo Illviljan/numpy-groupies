@@ -1,0 +1,26 @@
+name: docs
+channels:
+  # Don't change to pkgs/main, as it causes random timeouts in readthedocs
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.8
+  - ipykernel
+  - ipython
+  - jupyter_client
+  - nbsphinx
+  - numba
+  - numpy>=1.17
+  - pip
+  - pydata-sphinx-theme>=0.4.3
+  - pyproj
+  - sphinx-autosummary-accessors
+  - sphinx-book-theme >= 0.0.38
+  - sphinx-copybutton
+  - sphinx-panels
+  - sphinx<4
+  - pip:
+      - sphinxext-rediraffe
+      - sphinxext-opengraph
+      # relative to this file. Needs to be editable to be accepted.
+      - -e ../..

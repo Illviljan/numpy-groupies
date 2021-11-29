@@ -1,0 +1,17 @@
+name: xarray-tests
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  # MINIMUM VERSIONS POLICY: see doc/installing.rst
+  # Run ci/min_deps_check.py to verify that this file respects the policy.
+  # When upgrading python, numpy, or pandas, must also change
+  # doc/installing.rst and setup.py.
+  - python=3.7
+  - numba=0.51
+  - numpy=1.18
+  - pip
+  - pytest
+  - pytest-cov
+  - pytest-env
+  - pytest-xdist
