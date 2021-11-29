@@ -8,7 +8,7 @@ jobs:
   cancel:
     name: Cancel previous runs
     runs-on: ubuntu-latest
-    if: github.repository == 'pydata/xarray'
+    if: github.repository == 'Illviljan/numpy-groupies'
     steps:
     - uses: styfle/cancel-workflow-action@0.9.1
       with:
