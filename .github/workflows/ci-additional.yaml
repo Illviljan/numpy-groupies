@@ -42,7 +42,6 @@ jobs:
           [
             "py37-bare-minimum",
             "py37-min-all-deps",
-            "py38-all-but-dask",
           ]
     steps:
       - uses: actions/checkout@v2
