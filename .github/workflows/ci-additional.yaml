@@ -139,7 +139,7 @@ jobs:
           conda list
       - name: Run doctests
         run: |
-          python -m pytest --doctest-modules numpy_groupies --ignore numpy_groupies/tests, numpy_groupies/aggregate_weave.py
+          python -m pytest --doctest-modules numpy_groupies --ignore (numpy_groupies/tests, numpy_groupies/aggregate_weave.py)
 
   min-version-policy:
     name: Minimum Version Policy
