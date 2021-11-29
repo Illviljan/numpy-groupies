@@ -74,7 +74,7 @@ jobs:
         run: |
           mamba env update -f $CONDA_ENV_FILE
 
-      - name: Install xarray
+      - name: Install numpy-groupies
         run: |
           python -m pip install --no-deps -e .
 
@@ -82,13 +82,12 @@ jobs:
         run: |
           conda info -a
           conda list
-          python xarray/util/print_versions.py
-      - name: Import xarray
+      - name: Import numpy-groupies
         run: |
-          python -c "import xarray"
+          python -c "import numpy_groupies"
       - name: Run tests
         run: python -m pytest -n 4
-          --cov=xarray
+          --cov=numpy_groupies
           --cov-report=xml
           --junitxml=pytest.xml
 
