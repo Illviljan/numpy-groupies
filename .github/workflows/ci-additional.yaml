@@ -71,7 +71,7 @@ jobs:
           channels: conda-forge
           channel-priority: strict
           mamba-version: "*"
-          activate-environment: numpy-groupies-tests
+          activate-environment: xarray-tests
           auto-update-conda: false
           python-version: 3.8
           use-only-tar-bz2: true
